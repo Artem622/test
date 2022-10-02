@@ -1,27 +1,3 @@
-# def per(x,a,b):
-#     s=''
-#     x=int(str(x),a)
-#     while x>0:
-#         s = s + str(x%b)
-#         x = x//b
-#     return s[::-1]
-#
-# print(int('85667',9))
-#
-#
-# def newvodka(x,base):
-#     sys = '0123456789ABCDE'
-#     s=''
-#     while x>0:
-#         s=sys[x%base]+s
-#         x=x//base
-#     return s
-#
-# print(int('10101',5))
-# print(newvodka(651,15))
-#
-# print(bin(68))
-
 def fib():
     memo = [1, 2]
     while True:
@@ -45,8 +21,8 @@ def zeckendorf(n):
             nleft -= s
         else:
             digits.append(0)
-    assert nleft == 0, 'Check all of n is accounted for'
-    assert sum(x*y for x,y in zip(digits, seq)) == n, 'Assert digits are correct'
+    assert nleft == 0
+    assert sum(x*y for x,y in zip(digits, seq)) == n
     while digits[0] == 0:
         digits.pop(0)
     return digits
